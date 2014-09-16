@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var messageLabel: UILabel!
     @IBOutlet weak var enterNameTextField: UITextField!
     @IBOutlet weak var enterMessageTextField: UITextField!
+    @IBOutlet weak var nameLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,10 +28,13 @@ class ViewController: UIViewController {
     @IBAction func sendPostcardButtonPressed(sender: UIButton) {
         messageLabel.text = enterMessageTextField.text;
         messageLabel.hidden = false;
-        enterMessageTextField.text = "";
-        enterNameTextField.text = "";
-        enterNameTextField.resignFirstResponder()
         messageLabel.textColor = UIColor.blueColor()
+        nameLabel.hidden = false
+        nameLabel.text = "Nachricht von " + enterNameTextField.text + ":"
+        nameLabel.textColor = UIColor.greenColor()
+        enterNameTextField.text = "";
+        enterMessageTextField.text = "";
+        enterMessageTextField.resignFirstResponder()
     }
 
 }
